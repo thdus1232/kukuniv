@@ -1,12 +1,10 @@
 @charset "utf-8";
-
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-*{    box-sizing: border-box;}
-li{    list-style: none;}
-a{    color: inherit;}
-img{    vertical-align: center;}
+*{box-sizing: border-box;}
+a{color: inherit;}
+img{vertical-align: center;}
 body{
-    font-family: 'NanumSquare';
+    font-family: 'NanumSquare', sans-serif;
     font-weight: 400;
     background: #ffffff;
     color: #333333;
@@ -28,7 +26,6 @@ body{
     display: flex;
     justify-content: right;
 }
-#util_box>ul>li{}
 #util_box>ul>li>a{
     display: block;
     padding: 0 10px;
@@ -39,16 +36,17 @@ body{
     width: 1200px;
     height: 74px;
     margin: 0 auto;
-    /* background: #48869b; */
     display: flex;
 }
-
-.nav{    width: 994px;}
+.nav{
+    width: 994px;
+    position: relative;
+}
 .nav>ul{
     display: flex;
     justify-content: right;
 }
-.nav>ul>li{    padding-left: 5px;}
+.nav>ul>li{padding-left: 5px;}
 .nav>ul>li>a{
     display: inline-block;
     background-color: #fff;
@@ -60,14 +58,14 @@ body{
 .nav>ul>li>ul{
     z-index: 1000;
     display: none;
-    width: 896px;
-    height: auto;
+    /* width: 896px; */
+    width: 100%;
     position: absolute;
-    left: 656px;
-    top: 114px;
-    padding-top: 30px;
-    background: #813a3a;
+    top: 74px;left: 0;
+    padding-top: 15px;
+    background: #cedaa3f8;
 }
+.nav>ul>li>ul::after{content: ""; display: block; clear: both;}
 .nav>ul>li>ul>li{
     float: left;
     width: 21.5%;
@@ -83,6 +81,7 @@ body{
     line-height: normal;
     background: #e6edf0;
 }
+.nav>ul>li>ul>li>ul>li>a:hover{ font-weight: 700;}
 /* 서서브 메뉴 시작 */
 .nav>ul>li>ul>li>ul{
     position: relative;
@@ -96,11 +95,24 @@ body{
 }
 .nav>ul>li>ul>li>ul>li>a{
     display: inline-block;
-    /* color: #636363; */
     font-weight: normal;
     font-size: 0.929em;
-    padding: 2px 10px;
+    padding: 5px 10px;
     background: none;
+}
+.sub .bb{
+    font-weight: 600;
+    cursor: default;
+}
+.cursor{cursor: default;}
+/* 서서서브 시작 */
+.nav>ul>li>ul>li>ul>li>ul>li{
+    display: block;
+    /* color: #ff00bf; */
+    font-size: 0.929em;
+    height: auto;
+    padding: 8px 21px;
+    line-height: normal;
 }
 /* nav end */
 
@@ -154,9 +166,7 @@ body{
     padding-top: 20px;
     font-size: 18px;
 }
-.lnb_nav>ul>li>ul{
-    display: none;
-}
+.lnb_nav>ul>li>ul{display: none;}
 .lnb_nav>ul>li.active{
     color: #016c3f;
     font-weight: 800;
@@ -165,6 +175,10 @@ body{
     display: block;
     padding-top: 15px;
     padding-left: 40px;
+}
+.lnb_nav>ul>li>a:hover,
+.lnb_nav>ul>li>ul>li>a:hover{
+    font-weight: 700;
 }
 /* content start */
 #content{
@@ -193,9 +207,7 @@ body{
     border: 1px solid #bfbfbf;
     margin-left: -6px;
 }
-.con>ul>li:nth-child(3n){
-    border-left: none;
-}
+.con>ul>li:nth-child(3n){border-left: none;}
 .con>ul>li:nth-child(1),.con>ul>li:nth-child(2),
 .con>ul>li:nth-child(3){border-bottom: none;}
 .con>ul>li>a{
@@ -208,8 +220,8 @@ body{
     color: #009b59;
     font-weight: 600;
 }
-.con_sym{    margin: 0 auto;}
-.con_sym>.c1{    width: 100%;}
+.con_sym{margin: 0 auto;}
+.con_sym>.c1{width: 100%;}
 .c1>img{
     display: block;
     margin: 0 auto;
@@ -272,7 +284,7 @@ button{
     padding-right: 37px;
 }
 .line1>li:last-child{padding-right: 0;}
-.line2{    padding-top: 20px;}
+.line2{padding-top: 20px;}
 .line2>li{
     font-size: 14px;
     line-height: 20px;

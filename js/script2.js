@@ -7,10 +7,10 @@ $(function(){
     });
     // nav end
 
-    $(".lnb_nav>ul>li").click(function(){ 
+    $(".lnb_nav>ul>li").mouseover(function(){ 
         $(this).find(".lnb").stop().slideDown();
     });
-    $(".lnb_nav>ul>li").click(function(){ 
+    $(".lnb_nav>ul>li").mouseout(function(){ 
         $(this).find(".lnb").stop().slideUp();
     });
     // aside nav end
