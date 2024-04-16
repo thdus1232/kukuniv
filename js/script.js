@@ -15,38 +15,23 @@ $(function(){
     let photoIndex = 0;
 
     function nextImageSlide() { 
-        // 2-1. 인덱스를 1 증가
-        //      마지막 인덱스였다면 인덱스를 0으로 설정
         photoIndex++;
         photoIndex %= $bulletList.length;
 
-        // 2-2. .bullets 요소 내의 a 요소에 "on" 클래스를 제거
-        //      .인덱스에 위치한 a 요소에 "on" 클래스를 추가
         $bulletList.removeClass("on")
                     .eq(photoIndex).addClass("on");
 
-        // 2-3. .image-List 요소를 #slide 요소의 너비만큼 왼쪽으로 천천히 이동
         $imageList.animate({left:"-100%"}, duration, function() { 
-            // 2-4. .image-List 요소의 움직임이 끝나면
-            // 2-5. .image-List 요소의 스타일 제거
-            // 2-6. .image-List 요소의 첫 번째 자식 요소를
-            //      .image-List 요소의 마지막 자식 요소의 위치로 이동
             $(this).removeAttr("style")
                         .children(":first").appendTo(this);
         });
     }
 
-    // 1. bullet 기능을 위한 ul 요소를 생성
-    // 1-1. 생성된 ul 요소의 class 속성에 'bullets' 생성
-    // 1-2. .bullets 요소를 #slide 요소의 마지막 자식 요소로 추가
     $("<ul></ul>")
         .addClass("bullets")
         .appendTo("#slide");
 
     $imageList.children().each(function () {     
-        // 1-3. .image-List 요소의 자식 요소의 수만큼 li 요소를 생성
-        // 1-4. 생성된 li 요소에 a 요소를 추가
-        // 1-5. 생성된 li 요소를 .bullets 요소의 자식 요소로 추가
         $("<li></li>")
             .append("<a href='#'></a>")
             .appendTo("#slide>.bullets");
@@ -55,18 +40,12 @@ $(function(){
     let $bulletList = $("#slide > .bullets >li > a");
     $bulletList.eq(photoIndex).addClass("on");
 
-    // 2. 일정 시간마다
     timerId = window.setInterval(nextImageSlide, delay);
     
-// ----------------------------------------------------------------
-
+// bullet
     $bulletList.on("click", function(event) { 
         event.preventDefault();
-        // 클릭한 요소의 인덱스
         let clickedIndex = $bulletList.index(this);
-
-        // 클릭한 요소의 인덱스와 현재 활성화된 요소의 인덱스 차이
-        // = 이동해야할 요소의 수
         let step = clickedIndex - photoIndex;
 
         if(step ==0) return;
@@ -74,7 +53,6 @@ $(function(){
         photoIndex = clickedIndex;
         $bulletList.removeClass("on").eq(photoIndex).addClass("on");
 
-        // 이전/이후 방향을 구분하여 각 방향으로 슬라이드 이동
         if(step>0){
             $imageList.animate({left:-step*100+"%"}, duration, function() {
                 $(this).removeAttr("style")
@@ -89,7 +67,6 @@ $(function(){
                 .animate({left:0}, duration); 
         }
     });
-
     // slide end
 
     $(".tab>li").mouseover(function(){
@@ -154,7 +131,6 @@ $(function(){
         prevPosterSlide();
     });
 
-    
     // family site
     let $dropdownMenus = $(".site > ul > li > ul");
     let duration3 = 200;

@@ -9,12 +9,11 @@ img{
     vertical-align: center;
 }
 body{
-    font-family: 'NanumSquare';
+    font-family: 'NanumSquare', 'sans-serif';
     font-weight: 400;
     background: #ffffff;
     color: #333333;
     width: 100%;
-    height: 3181px;
 }
 #header{
     width: 100%; height: 114px;
@@ -421,12 +420,12 @@ button>span{display: none;}
     background-color: #e3e4e6;
     position: relative;
 }
-.quick2::before{
+.quick2::after{
     content: '';
     background: url(../images/char.png);
-    display: inline-block;
+    display: block;
     width: 191px;height: 258px;
-    position: absolute;top: -37px;right: 188px;
+    margin-left: 1167px; margin-top: -191px;
 }
 .quick2>ul{
     padding: 5px auto;
