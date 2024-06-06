@@ -6,6 +6,11 @@ $(function(){
         $(this).find(".sub").stop().slideUp();
     });
     // nav end
+    // 1200 nav
+    $('#side-button').click(function(){
+        $('#m_gnb').toggleClass('on');
+    });
+    // 1200 end
 
     // slide start
     let $imageList = $("#slide>.image-List");
