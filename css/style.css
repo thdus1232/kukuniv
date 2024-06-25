@@ -594,7 +594,7 @@ button>span{display: none;}
     #header{position: fixed;top: 0;left: 0;right: 0;z-index: 1000;height: 94px;}
     .nav{
         width: 100%;
-        background: #fff; height: 55px;
+        background: #fff; height: 56px;
         z-index: -1;
     }
     .logo>a>img{display: block;width: 157px;height: auto;}
@@ -608,7 +608,7 @@ button>span{display: none;}
     #m_gnb.on {display: block;}
     #m_gnb {
         position: fixed;
-        top: 114px;
+        top: 96px;
         left: 0;
         width: 300px;
         background: #fff;
